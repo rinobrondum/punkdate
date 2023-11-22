@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
          
                [
                    // title/name - heading
-                   'title' => 'title1',
+                   'age' => '26',
                    // company - subtitle
                    'name' => 'name-user1',
                    'location' => 'Boston, MA',
@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
            \App\Models\Listing::create(
                [
                    'name' => 'name-user2',
-                   'title' => 'title2',
+                   'age' => '27',
                    'location' => 'New York, NY',
                    'email' => 'email2@email.com',
                    'tags' => 'female, bi, 28-35',
