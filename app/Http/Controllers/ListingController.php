@@ -25,4 +25,9 @@ class ListingController extends Controller
 
         ]);
     }
+
+    //Show Create Form
+    public function ceate() {
+        return view('listings.create');
+    }
 }
