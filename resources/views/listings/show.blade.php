@@ -5,7 +5,7 @@
 ><i class="fa-solid fa-arrow-left"></i> Back
 </a>
 <div class="mx-4">
-<x-card>
+<div class= "bg-gray-50 border border-gray-200 rounded p-6">
     <div
         class="flex flex-col items-center justify-center text-center"
     >
@@ -37,6 +37,6 @@
             </div>
         </div>
     </div>
-</x-card>
+</div>
 </div>
 </x-layout>

@@ -30,5 +30,10 @@ Route::get('/', [ListingController::class, 'index']);
 // Show Create Form
 Route::get('/listings/create', [ListingController::class, 'create']);
 
+//Stor Create Data
+//sumit form data to this route & call thr store metod
+Route::post('/listings', [ListingController::class, 'store']);
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
+

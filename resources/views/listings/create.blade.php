@@ -1,5 +1,5 @@
 <x-layout>
-<x-card class="p-10 max-w-lg mx-auto mt-24"
+<div class="bg-gray-50 border border-gray-200 rounded p-10 max-w-lg mx-auto mt-24"
 >
 <header class="text-center">
     <h2 class="text-2xl font-bold uppercase mb-1">
@@ -8,7 +8,9 @@
     <p class="mb-4">Create profile to find a punk date</p>
 </header>
 
-<form action="">
+<form method="POST" action="/listings">
+
+    @csrf
     <div class="mb-6">
         <label
             for="name"
@@ -19,93 +21,88 @@
             type="text"
             class="border border-gray-200 rounded p-2 w-full"
             name="name"
-        />
+           {{-- keep data in field after error --}}
+          value="{{ old('name') }}" />
+        {{-- if any of the form fields fail, laravel sends back an error message to the create view --}}
+        @error('name')
+          <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
     </div>
-
     <div class="mb-6">
-        <label for="title" class="inline-block text-lg mb-2"
-            >Title</label
-        >
-        <input
-            type="text"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="title"
-            placeholder="Example: Hey let’s connect and talk music & food!"
-        />
-    </div>
+        <label for="age" class="inline-block text-lg mb-2">age</label>
+        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="age"
+          value="{{ old('age') }}" />
 
-    <div class="mb-6">
-        <label
-            for="location"
-            class="inline-block text-lg mb-2"
-            >Location</label
-        >
-        <input
-            type="text"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="location"
-            placeholder="Example: Boston MA, etc"
-        />
-    </div>
+        @error('age')
+          <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
+      </div>
 
-    <div class="mb-6">
-        <label for="email" class="inline-block text-lg mb-2"
-            >Email</label
-        >
-        <input
-            type="text"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="email"
-        />
-    </div>
+      <div class="mb-6">
+        <label for="location" class="inline-block text-lg mb-2">Location</label>
+        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="location"
+          value="{{ old('location') }}" placeholder="Example: Boston MA, etc" />
 
-    <div class="mb-6">
+        @error('location')
+          <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
+      </div>
+
+      <div class="mb-6">
+        <label for="email" class="inline-block text-lg mb-2">Email</label>
+        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="email"
+          value="{{ old('email') }}" />
+
+        @error('email')
+          <p class="text-red-500 text-xs
+          mt-1">{{ $message }}</p>
+        @enderror
+      </div>
+
+      <div class="mb-6">
         <label for="tags" class="inline-block text-lg mb-2">
-            Tags (Comma Separated)
+          Tags (Comma Separated)
         </label>
-        <input
-            type="text"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="tags"
-            placeholder="Example: female, male, straight, gay, bi"
-        />
-    </div>
+        <input type="text" class="border border-gray-200 rounded p-2 w-full" name="tags"
+          value="{{ old('tags') }}" placeholder="Example: female, male, straight, gay, bi" />
 
-    <div class="mb-6">
+        @error('tags')
+          <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
+      </div>
+
+      <div class="mb-6">
         <label for="image" class="inline-block text-lg mb-2">
-            Profile Picture
+          Profile Picture
         </label>
-        <input
-            type="file"
-            class="border border-gray-200 rounded p-2 w-full"
-            name="image"
-        />
-    </div>
+        <input type="file" class="border border-gray-200 rounded p-2 w-full" name="image" />
 
-    <div class="mb-6">
-        <label
-            for="description"
-            class="inline-block text-lg mb-2"
-        >
-            Description
+        @error('image')
+          <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
+      </div>
+
+      <div class="mb-6">
+        <label for="description" class="inline-block text-lg mb-2">
+          Description
         </label>
-        <textarea
-            class="border border-gray-200 rounded p-2 w-full"
-            name="description"
-            rows="10"
-            placeholder="Include: age, bio, bla, etc..."
-        ></textarea>
-    </div>
+        <textarea class="border border-gray-200 rounded p-2 w-full" name="description" rows="10"
+          placeholder="Include: age, bio, bla, etc...">
+      {{ old('description') }}
+        </textarea>
 
-    <div class="mb-6">
-        <button
-            class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
-        >
-            Create Profile
+        @error('description')
+          <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+        @enderror
+      </div>
+
+      <div class="mb-6">
+        <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+          Create Profile
         </button>
 
         <a href="/" class="text-black ml-4"> Back </a>
-    </div>
-</form>
-</x-card>
+      </div>
+    </form>
+  </div>
 </x-layout>
