@@ -26,7 +26,7 @@
                 Description
             </h3>
             <div class="text-lg space-y-6">
-                {{$listing->decription}}
+                {{$listing->description}}
 
                 <a
                     href="mailto:{{$listing->email}}"
