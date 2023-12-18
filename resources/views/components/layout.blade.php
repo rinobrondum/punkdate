@@ -54,6 +54,8 @@ class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg
   >Post Profile</a
 >
   </footer>
+
+  <x-flash-message />
 </body>
 
 </html>

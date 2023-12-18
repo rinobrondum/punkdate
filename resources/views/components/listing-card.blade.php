@@ -8,7 +8,7 @@
           <!-- NAME -->
           <a href="/listings/{{$listing->id}}">{{$listing->name}}</a>
         </h3>
-        <!-- TITLE-->
+        <!-- Age-->
         <div class="text-xl font-bold mb-4">{{$listing->age}}</div>
          <!-- TAGS-->
         <x-listing-tags :tagsCsv="$listing->tags" />
