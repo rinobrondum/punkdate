@@ -6,11 +6,10 @@
 </a>
 <div class="mx-4">
 <div class= "bg-gray-50 border border-gray-200 rounded p-6">
-    <div
-        class="flex flex-col items-center justify-center text-center"
-    >
-        <img
-            class="w-48 mr-6 mb-6" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/image/no-image.png')}}" alt="" />
+
+    <div class="flex flex-col items-center justify-center text-center">
+
+        <img class="w-48 mr-6 mb-6" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/image/no-image.png')}}" alt="" />
 
         <!-- NAME -->
         <h3 class="text-2xl mb-2">{{$listing->name}}</h3>
@@ -37,5 +36,12 @@
         </div>
     </div>
 </div>
+
+ <x-card class="mt-4 p-2 flex space-x-6">
+      <a href="/listings/{{$listing->id}}/edit">
+        <i class="fa-solid fa-pencil"></i> Edit
+      </a>
+    </x-card>
+
 </div>
 </x-layout>

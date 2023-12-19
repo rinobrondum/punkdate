@@ -34,6 +34,13 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 //sumit form data to this route & call thr store metod
 Route::post('/listings', [ListingController::class, 'store']);
 
+// Show Edit Form
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
+
+//Upate Listing
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
