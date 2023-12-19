@@ -10,8 +10,7 @@
         class="flex flex-col items-center justify-center text-center"
     >
         <img
-            class="w-48 mr-6 mb-6"
-            src="{{asset('images/no-image.png')}}" alt="" />
+            class="w-48 mr-6 mb-6" src="{{$listing->logo ? asset('storage/' . $listing->logo) : asset('/image/no-image.png')}}" alt="" />
 
         <!-- NAME -->
         <h3 class="text-2xl mb-2">{{$listing->name}}</h3>
