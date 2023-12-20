@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rule;
 
 class ListingController extends Controller
@@ -88,4 +89,10 @@ public function edit(Listing $listing) {
     return back()->with('message', 'Listing updated successfully!');
 }
 
+//Delete Listing
+public function destroy(Listing $listing) {
+    $listing->delete();
+    return redirect('/')->with('message', 'Listing Deleted Succesfully');
+
+    }
 }
