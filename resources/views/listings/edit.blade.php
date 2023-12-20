@@ -94,7 +94,7 @@
         </label>
         <textarea class="border border-gray-200 rounded p-2 w-full" name="description" rows="10"
           placeholder="Include: age, bio, bla, etc...">
-      {{ old('description') }}
+      {{$listing->description }}
         </textarea>
 
         @error('description')
