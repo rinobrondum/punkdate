@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\User;
-use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -25,7 +25,8 @@ class UserController extends Controller
         $formFields['password'] = bcrypt($formFields['password']);
 
          // Create User
-         $user = User::create($formFields);
+         $user = Use
+         r::create($formFields);
 
           // Login
         auth()->login($user);

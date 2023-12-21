@@ -16,7 +16,7 @@
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
-                name="name"/>
+                name="name" value={{old('name')}} />
 
           @error('name')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -30,7 +30,7 @@
             <input
                 type="email"
                 class="border border-gray-200 rounded p-2 w-full"
-                name="email"/>
+                name="email" value={{old('email')}}/>
 
                 @error('email')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -47,7 +47,7 @@
             <input
                 type="password"
                 class="border border-gray-200 rounded p-2 w-full"
-                name="password"/>
+                name="password" value={{old('password')}}/>
 
                 @error('password')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -64,7 +64,7 @@
             <input
                 type="password"
                 class="border border-gray-200 rounded p-2 w-full"
-                name="password_confirmation"/>
+                name="password_confirmation" value={{old('password_confirmation')}}/>
 
                 @error('password_confirmation')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
